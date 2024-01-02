@@ -1,2 +1,2 @@
 #!/bin/bash
-import $PYCODE
+python3 -c $PYCODE
