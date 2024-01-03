@@ -1,3 +1,5 @@
 #!/usr/bin/python3
 str = "Holberton School"
-print(str *3)
+times = 3
+string = str * times
+print(string + "\n" + str[0:9])
