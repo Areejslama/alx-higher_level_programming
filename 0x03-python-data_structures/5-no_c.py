@@ -6,4 +6,3 @@ def no_c(my_string):
         if char not in removed_chars:
             new_string += char
     return new_string
-
