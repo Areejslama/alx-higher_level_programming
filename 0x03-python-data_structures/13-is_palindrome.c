@@ -1,54 +1,72 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "lists.h"
+
 /**
- * reverse_list - Reverses a linked list
- * @head: The head of the linked list
+ * reverse_listint - reverses a linked list
+ * @head: pointer to the first node in the list
  *
- * Return: The head of the reversed linked list
+ * Return: pointer to the first node in the new list
  */
-listint_t *reverse_list(listint_t *head)
+void reverse_listint(listint_t **head)
 {
-    listint_t *prev = NULL, *current = head, *next = NULL;
+	listint_t *prev = NULL;
+	listint_t *current = *head;
+	listint_t *next = NULL;
 
-    while (current != NULL)
-    {
-        next = current->next;
-        current->next = prev;
-        prev = current;
-        current = next;
-    }
+	while (current)
+	{
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
 
-    return prev;
+	*head = prev;
 }
 
 /**
- * is_palindrome - Checks if a singly linked list is a palindrome
- * @head: The head of the singly linked list
+ * is_palindrome - checks if a linked list is a palindrome
+ * @head: double pointer to the linked list
  *
- * Return: 1 if it is a palindrome, 0 otherwise
+ * Return: 1 if it is, 0 if not
  */
 int is_palindrome(listint_t **head)
 {
-    if (head == NULL || *head == NULL)
-        return (1); 
+	listint_t *slow = *head, *fast = *head, *temp = *head, *dup = NULL;
 
-    listint_t *slow = *head, *fast = *head;
-    while (fast != NULL && fast->next != NULL)
-    {
-        slow = slow->next;
-        fast = fast->next->next;
-    }
-    slow = reverse_list(slow);
+	if (*head == NULL || (*head)->next == NULL)
+		return (1);
 
-    while (slow != NULL)
-    {
-        if ((*head)->n != slow->n)
-            return (0);
+	while (1)
+	{
+		fast = fast->next->next;
+		if (!fast)
+		{
+			dup = slow->next;
+			break;
+		}
+		if (!fast->next)
+		{
+			dup = slow->next->next;
+			break;
+		}
+		slow = slow->next;
+	}
 
-        *head = (*head)->next;
-        slow = slow->next;
-    }
+	reverse_listint(&dup);
 
-    return (1);
+	while (dup && temp)
+	{
+		if (temp->n == dup->n)
+		{
+			dup = dup->next;
+			temp = temp->next;
+		}
+		else
+			return (0);
+	}
+
+	if (!dup)
+		return (1);
+
+	return (0);
 }
