@@ -2,6 +2,6 @@
 def print_sorted_dictionary(a_dictionary):
     if a_dictionary is None:
         return 
-    new_dict = sorted(a_dictionary.items())
-    for key, value in new_dict:
+    dictionary = sorted(a_dictionary.items())
+    for key, value in dictionary:
         print("{}:{}".format(key, value))
