@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-
 class Square:
-
-    """ Define a class """
-
+    """ Define a class. """
     pass
