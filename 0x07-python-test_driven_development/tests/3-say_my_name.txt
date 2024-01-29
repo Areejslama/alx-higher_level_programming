@@ -1,0 +1,37 @@
+#!/usr/bin/python3
+
+==================
+Using ``say_my_name function`` return the full name
+-------------------
+
+::
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+>>> say_my_name("alaa", "elsayed")
+My name is alaa elsayed
+
+::
+
+>>> say_my_name("mai", 17)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+::
+
+>>> say_my_name(22, "mustafa")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+::
+
+>>> say_my_name(8, "areej")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+::
+
+>>> say_my_name("amr", "ahmed")
+My name is amr ahmed
