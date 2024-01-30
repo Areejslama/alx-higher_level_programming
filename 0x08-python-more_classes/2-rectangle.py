@@ -2,6 +2,7 @@
 
 """Define a class."""
 
+
 class Rectangle:
     """Represent the Rectangle"""
 
