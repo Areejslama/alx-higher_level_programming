@@ -77,4 +77,3 @@ class Rectangle:
         """Delete an instance."""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
-
