@@ -44,3 +44,20 @@ Using ``add_integer function`` return the addition of a and b
 
 >>> add_integer(21, 5)
 26
+
+::
+
+>>> add_integer(1, "hi")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+::
+
+>>> add_integer("hello", 2)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+::
+
+>>> add_integer(-2, -1)
+-3
