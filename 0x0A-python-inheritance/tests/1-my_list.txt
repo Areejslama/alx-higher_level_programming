@@ -89,3 +89,9 @@ TypeError: print_sorted() takes 1 positional argument but 2 were given
 
 >>> print(L)
 [6, 5, -4, 3, 2]
+
+::
+
+>>> L = MyList()
+>>> L.print_sorted()
+[]
