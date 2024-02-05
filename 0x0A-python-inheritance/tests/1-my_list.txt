@@ -50,3 +50,18 @@ Using ``MyList function`` return the elements of the list
 >>> print(L)
 [6, 5, 4, 3, 2]
 
+::
+>>> L = MyList()
+>>> L.append(-4)
+>>> L.append(-3)
+>>> L.append(-6)
+>>> L.append(-8)
+>>> L.append(-5)
+>>> print(L)
+[-4, -3, -6, -8, -5]
+
+>>> L.print_sorted()
+[-8, -6, -5, -4, -3]
+
+>>> print(L)
+[-4, -3, -6, -8, -5]
