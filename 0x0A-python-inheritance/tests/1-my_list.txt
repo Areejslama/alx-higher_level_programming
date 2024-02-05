@@ -65,3 +65,10 @@ Using ``MyList function`` return the elements of the list
 
 >>> print(L)
 [-4, -3, -6, -8, -5]
+
+::
+
+>>> L.print_sorted(1)
+Traceback (most recent call last):
+...
+TypeError: print_sorted() takes 1 positional argument but 2 were given
