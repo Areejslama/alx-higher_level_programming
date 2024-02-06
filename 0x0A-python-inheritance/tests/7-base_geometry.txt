@@ -73,3 +73,33 @@ TypeError: integer_validator() missing 1 required positional argument: 'value'
 Traceback (most recent call last):
 ...
 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> b.integer_validator("name", "string")
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+>>> b.integer_validator("string", "hello")
+Traceback (most recent call last):
+...
+TypeError: string must be an integer
+
+>>> b.integer_validator("object", "True")
+Traceback (most recent call last):
+...
+TypeError: object must be an integer
+
+>>> b.integer_validator("string", "False")
+Traceback (most recent call last):
+...
+TypeError: string must be an integer
+
+>>> b.integer_validator("dict", {"key" : "value"})
+Traceback (most recent call last):
+...
+TypeError: dict must be an integer
+
+>>> b.integer_validator("set", {"name" : "value"})
+Traceback (most recent call last):
+...
+TypeError: set must be an integer
