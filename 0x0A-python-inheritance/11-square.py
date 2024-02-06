@@ -4,7 +4,6 @@ Contains the class BaseGeometry and subclass Rectangle
 """
 
 
-
 class BaseGeometry:
     """Base class for geometry"""
 
