@@ -7,7 +7,7 @@ Contains the class BaseGeometry and subclass Rectangle
 class BaseGeometry:
     """represent a geometry base class"""
     def area(self):
-        raise Exception("area() is not implemented")
+        raise NotImplementedError("area() is not implemented")
 
     def integer_validator(self, name, value):
         """Validate if value is an integer greater than 0."""
