@@ -51,3 +51,25 @@ ValueError: speed must be greater than 0
 Traceback (most recent call last):
 ...
 TypeError: data must be an integer
+
+>>> b.integer_validator("data", -6)
+Traceback (most recent call last):
+...
+ValueError: data must be greater than 0
+
+>>> b.integer_validator("integer", 6, 4)
+Traceback (most recent call last):
+...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+>>> b.integer_validator("integer")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> b.integer_validator("integer", 4)
+
+>>> b.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
