@@ -22,3 +22,32 @@ Traceback (most recent call last):
 ...
 TypeError: name must be an integer
 
+>>> b.integer_validator("list", [2, 4, 6])
+Traceback (most recent call last):
+...
+TypeError: list must be an integer
+
+>>> b.integer_validator("tuple", {3, 5, 7})
+Traceback (most recent call last):
+...
+TypeError: tuple must be an integer
+
+>>> b.integer_validator("double", 6.55)
+Traceback (most recent call last):
+...
+TypeError: double must be an integer
+
+>>> b.integer_validator("float", 2.5)
+Traceback (most recent call last):
+...
+TypeError: float must be an integer
+
+>>> b.integer_validator("speed", -4)
+Traceback (most recent call last):
+...
+ValueError: speed must be greater than 0
+
+>>> b.integer_validator("data", "hello")
+Traceback (most recent call last):
+...
+TypeError: data must be an integer
