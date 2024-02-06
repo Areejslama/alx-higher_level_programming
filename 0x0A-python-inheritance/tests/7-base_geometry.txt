@@ -17,15 +17,15 @@ Traceback (most recent call last):
 ...
 TypeError: area() takes 1 positional argument but 2 were given
 
->>> b.integer_validator("integer", 0)
+>>> b.integer_validator("age", 0)
 Traceback (most recent call last):
 ...
-ValueError: integer must be greater than 0
+ValueError: age must be greater than 0
 
->>> b.integer_validator("integer", -1)
+>>> b.integer_validator("age", -1)
 Traceback (most recent call last):
 ...
-ValueError: integer must be greater than 0
+ValueError: age must be greater than 0
 
 >>> b.integer_validator("name", "hi")
 Traceback (most recent call last):
@@ -52,10 +52,10 @@ Traceback (most recent call last):
 ...
 TypeError: float must be an integer
 
->>> b.integer_validator("speed", -4)
+>>> b.integer_validator("age", -4)
 Traceback (most recent call last):
 ...
-ValueError: speed must be greater than 0
+ValueError: age must be greater than 0
 
 >>> b.integer_validator("data", "hello")
 Traceback (most recent call last):
@@ -72,12 +72,12 @@ Traceback (most recent call last):
 ...
 TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
->>> b.integer_validator("integer")
+>>> b.integer_validator("age")
 Traceback (most recent call last):
 ...
 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
->>> b.integer_validator("integer", 4)
+>>> b.integer_validator("age", 4)
 
 >>> b.integer_validator()
 Traceback (most recent call last):
@@ -94,10 +94,10 @@ Traceback (most recent call last):
 ...
 TypeError: string must be an integer
 
->>> b.integer_validator("object", "True")
+>>> b.integer_validator("age", "True")
 Traceback (most recent call last):
 ...
-TypeError: object must be an integer
+TypeError: age must be an integer
 
 >>> b.integer_validator("string", "False")
 Traceback (most recent call last):
