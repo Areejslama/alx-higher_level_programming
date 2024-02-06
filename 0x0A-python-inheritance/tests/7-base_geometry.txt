@@ -74,7 +74,7 @@ Traceback (most recent call last):
 ...
 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
->>> b.integer_validator("age", 4)
+>>> b.integer_validator("age", "4")
 
 >>> b.integer_validator()
 Traceback (most recent call last):
