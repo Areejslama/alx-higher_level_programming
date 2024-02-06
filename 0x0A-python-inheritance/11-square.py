@@ -21,7 +21,6 @@ class Rectangle(BaseGeometry):
     """represent a rectangle"""
     def __init__(self, width, height):
         """instant of rectangle"""
-        super().__init__()
         self.integer_validator("width", width)
         self.__width = width
         self.integer_validator("height", height)
