@@ -37,7 +37,6 @@ class Rectangle(BaseGeometry):
 class Square(Rectangle):
     """represent a square"""
     def __init__(self, size):
-        super().__init__(size, size)
         self.__size = size
 
     def area(self):
