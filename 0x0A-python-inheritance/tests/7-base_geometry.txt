@@ -119,7 +119,6 @@ Traceback (most recent call last):
 ...
 TypeError: complex must be an integer
 
->>> b.integer_validator("bytearrays", bytearray(b"bytes"))
+>>> b.integer_validator('', -1)
 Traceback (most recent call last):
-...
-TypeError: bytearrays must be an integer
+ValueError:  must be greater than 0
