@@ -1,0 +1,24 @@
+!/usr/bin/python3
+
+======================
+Using ``BaseGeometry function`` return the values
+-------------------
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> b = BaseGeometry()
+>>> b.integer_validator("integer", 0)
+Traceback (most recent call last):
+...
+ValueError: integer must be greater than 0
+
+>>> b.integer_validator("integer", -1)
+Traceback (most recent call last):
+...
+ValueError: integer must be greater than 0
+
+>>> b.integer_validator("name", "hi")
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
