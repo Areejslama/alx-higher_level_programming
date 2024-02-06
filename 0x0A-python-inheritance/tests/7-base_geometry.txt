@@ -47,10 +47,7 @@ Traceback (most recent call last):
 ...
 TypeError: double must be an integer
 
->>> b.integer_validator("float", 2.5)
-Traceback (most recent call last):
-...
-TypeError: float must be an integer
+>>> b.integer_validator("age", 1)
 
 >>> b.integer_validator("age", -4)
 Traceback (most recent call last):
@@ -62,10 +59,10 @@ Traceback (most recent call last):
 ...
 TypeError: data must be an integer
 
->>> b.integer_validator("data", -6)
+>>> b.integer_validator("age", (4,))
 Traceback (most recent call last):
 ...
-ValueError: data must be greater than 0
+TypeError: age must be an integer
 
 >>> b.integer_validator("integer", 6, 4)
 Traceback (most recent call last):
@@ -84,10 +81,10 @@ Traceback (most recent call last):
 ...
 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
->>> b.integer_validator("name", "string")
+>>> b.integer_validator("age",[3])
 Traceback (most recent call last):
 ...
-TypeError: name must be an integer
+TypeError: age must be an integer
 
 >>> b.integer_validator("string", "hello")
 Traceback (most recent call last):
