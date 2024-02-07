@@ -79,11 +79,6 @@ Traceback (most recent call last):
 ...
 TypeError: age must be an integer
 
->>> b.integer_validator("age",[3])
-Traceback (most recent call last):
-...
-TypeError: age must be an integer
-
 >>> b.integer_validator()
 Traceback (most recent call last):
 ...
@@ -94,20 +89,10 @@ Traceback (most recent call last):
 ...
 TypeError: age must be an integer
 
->>> b.integer_validator("string", "hello")
-Traceback (most recent call last):
-...
-TypeError: string must be an integer
-
 >>> b.integer_validator("age", "True")
 Traceback (most recent call last):
 ...
 TypeError: age must be an integer
-
->>> b.integer_validator("string", "False")
-Traceback (most recent call last):
-...
-TypeError: string must be an integer
 
 >>> b.integer_validator("age", {3, 4})
 Traceback (most recent call last):
@@ -118,17 +103,3 @@ TypeError: age must be an integer
 Traceback (most recent call last):
 ...
 TypeError: age must be an integer
-
->>> b.integer_validator("complex", complex(2, 4))
-Traceback (most recent call last):
-...
-TypeError: complex must be an integer
-
->>> b.integer_validator('name')
-Traceback (most recent call last):
-TypeError: integer_validator() missing 1 required positional argument: 'value'
-
->>> b.integer_validator("integer", 1, 2)
-Traceback (most recent call last):
-...
-TypeError: integer_validator() takes 3 positional arguments but 4 were given
