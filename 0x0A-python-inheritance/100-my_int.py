@@ -4,11 +4,8 @@
 
 class MyInt(int):
     """represent the subclass"""
-    def __init__(self, value):
-        self.value = value
+    def __eq__(self, other):
+        return int(self) != other
 
-        def __eq__(self, other):
-            return self.value != other.value
-
-        def __ne__(self, other):
-            return self.value == other.value
+    def __ne__(self, other):
+        return int(self) == other
