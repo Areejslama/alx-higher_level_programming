@@ -3,6 +3,7 @@
 
 
 class MyInt(int):
+    """represent the subclass"""
     def __init__(self, value):
         self.value = value
 
