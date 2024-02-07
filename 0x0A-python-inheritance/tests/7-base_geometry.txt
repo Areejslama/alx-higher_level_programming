@@ -1,12 +1,14 @@
-!/usr/bin/python3
-
+The ``7-base_geometry`` module
 ======================
-Using ``BaseGeometry function`` return the values
+
+Using ``BaseGeometry``
 -------------------
 
->>> BG = __import__('7-base_geometry').BaseGeometry
+Importing the function from the module:
+        >>> BG = __import__("7-base_geometry").BaseGeometry
 
- >>> b = BG()
+Checking for area failure:
+	 >>> b = BG()
 	 >>> b.area()
 	 Traceback (most recent call last):
 	 ...
@@ -34,7 +36,7 @@ Checking for integer < 0;
          ValueError: integer must be greater than 0
 
 Checking for non-integer types:
-	 >>> b.integer_validator("bool", -8)
+	 >>> b.integer_validator("bool", -5)
 	 Traceback (most recent call last):
          ...
          ValueError: bool must be greater than 0
