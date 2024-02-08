@@ -3,13 +3,11 @@
 import json
 
 
-
 def to_json_string(my_obj):
     """represtentation jason
 
     Args:
     my_obj:object to handle
-    
     Return:
     string represntation in json format
     """
