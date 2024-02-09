@@ -5,5 +5,5 @@ import json
 
 def save_to_json_file(my_obj, filename):
     """represent a function"""
-    with open(filename, "w",  encoding="UTF8"):
-        print(json.dumps(my_obj))
+    with open(filename, "w") as f:
+        json.dump(my_obj, f)
