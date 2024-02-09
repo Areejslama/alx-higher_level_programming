@@ -9,10 +9,8 @@ file = add_item.json
 
 try:
     new = load(file)
-except(FileNotFoundError, ValueError):
+except (FileNotFoundError, ValueError):
     new = []
     for i in sys.argv[1:]:
         new.append(i)
         save(new, file)
-
-
