@@ -11,4 +11,5 @@ def load_from_json_file(filename):
     created object
     """
     with open(filename, "r") as f:
-        json.load(f)
+        string = f.read()
+        json.loads(string)
