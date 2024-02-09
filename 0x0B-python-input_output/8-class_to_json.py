@@ -3,14 +3,14 @@
 
 
 def class_to_json(obj):
-    """represent a function"""
-    data = {}
-    for key, value in obj._dict_.items():
-        """serialize object"""
-        if is instance(value, (list, dict, str, int, bool):
-                data[key] = value
-        else:
-        """skip serializing object"""
-        pass
+    """Serialize a Python object into a dictionary"""
 
-        return data
+    data = {}
+    for key, value in obj.__dict__.items():
+        """Serialize object"""
+        if isinstance(value, (list, dict, str, int, bool)):
+            data[key] = value
+        else:
+            """Skip serializing object"""
+            pass
+    return data
