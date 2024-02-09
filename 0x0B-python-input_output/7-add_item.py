@@ -5,16 +5,16 @@ import json
 import sys
 
 
-save_file = __import__('5-save_to_json_file').save_to_json_file
-load_file = __import__('6-load_from_json_file').load_from_json_file
+load_file =  __import__('6-load_from_json_file').load_from_json_file
+save_file =  __import__('5-save_to_json_file').save_to_json_file
 
 
-file = "add_item.json"
+filename = "add_item.json"
 
 try:
-    new = load_file(file)
+    my_file = load_file(filename)
 except (FileNotFoundError, ValueError):
-    new = []
+    my_file = []
     for args in sys.argv[1:]:
-        new.append(args)
-        save_file(new, file)
+        my_file.append(args)
+        save_file(my_file, filename)
