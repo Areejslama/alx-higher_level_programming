@@ -18,5 +18,7 @@ class Student:
                     data.update({n: self.__dict__[n]})
             return data
         return self.__dict__.copy()
+
     def reload_from_json(self, json):
-        return self.__dict__.update(n: self.json[n]})
+        for n in json:
+            self.__dict__.update({n: json[n]})
