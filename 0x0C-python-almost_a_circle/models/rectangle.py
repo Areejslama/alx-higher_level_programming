@@ -81,4 +81,10 @@ class Rectangle(Base):
         elif 'y' in kwargs:
             self.__y = kwargs['y']
     def to_dictionary(self):
-        return self.__dict__
+        return {
+                'id': self.id,
+                'width': self.width,
+                'height': self.height,
+                'x': self.__x,
+                'y': self.__y,
+                }
