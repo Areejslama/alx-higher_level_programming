@@ -47,9 +47,8 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Create instance from dictionary"""
-        if dictionary and dictionary != {}:
-            if cls.__name__ == "Rectangle":
-                dummy = cls(1, 1, 1)
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1, 1)
         else:
             dummy.update(**dictionary)
         return dummy
