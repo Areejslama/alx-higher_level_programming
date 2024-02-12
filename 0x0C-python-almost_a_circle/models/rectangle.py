@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """define a base class"""
 
-
 from models.base import Base
 
 
@@ -43,7 +42,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """ set x of rectangle"""
+        """get x of rectangle"""
         return self.__x
 
     @x.setter
@@ -56,7 +55,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """set y of rectangle"""
+        """get y of rectangle"""
         return self.__y
 
     @y.setter
@@ -72,21 +71,20 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        for _ in range(self.__height):
-            print('#' * (self.__width))
-
-    def __str__(self):
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.__x, self.__y,
-            self.width, self.height)
-
-    def display(self):
+        """display rectangle"""
         for _ in range(self.__y):
             print()
         for _ in range(self.__height):
             print(' ' * self.__x + '#' * self.__width)
 
+    def __str__(self):
+        """string representation of rectangle"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y,
+            self.width, self.height)
+
     def update(self, *args, **kwargs):
+        """update rectangle attributes"""
         if len(args) >= 1:
             self.id = args[0]
         elif 'id' in kwargs:
@@ -109,10 +107,11 @@ class Rectangle(Base):
             self.__y = kwargs['y']
 
     def to_dictionary(self):
+        """return dictionary representation of rectangle"""
         return {
             'id': self.id,
             'width': self.width,
             'height': self.height,
             'x': self.__x,
             'y': self.__y,
-            }
+        }
