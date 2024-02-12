@@ -5,10 +5,11 @@ import json
 
 
 class Base:
+    """reprsent base class"""
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Represent base class"""
+        """init base class"""
         if id is not None:
             self.id = id
         else:
