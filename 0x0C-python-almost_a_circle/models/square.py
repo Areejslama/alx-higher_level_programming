@@ -32,22 +32,29 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Update the square"""
-        if len(args) >= 1:
-            self.id = args[0]
-        elif 'id' in kwargs:
-            self.id = kwargs['id']
-        if len(args) >= 2:
-            self.size = args[1]
-        elif 'size' in kwargs:
-            self.size = kwargs['size']
-        if len(args) >= 3:
-            self.__x = args[2]
-        elif 'x' in kwargs:
-            self.__x = kwargs['x']
-        if len(args) >= 4:
-            self.__y = args[3]
-        elif 'y' in kwargs:
-            self.__y = kwargs['y']
+        if args and len(args) != 0:
+            if len(args) >= 1:
+                if not isinstance(args[0], int) and args[0] is not None:
+                    raise TypeError("id must be an integer")
+                self.id = args[0]
+                if len(args) > 2:
+                    self.size = args[1]
+                if len(args) > 3:
+                    self.__x = args[2]
+                if len(args) > 4:
+                    self.__y = args[3]
+        for key, value in kwargs.items():
+            if key == 'id':
+                if not isinstance(value, int) and value is not None:
+                    raise TypeError("id must be an int")
+                self.id = value
+            elif key == 'size':
+                self.size = value
+            elif key == 'x':
+                self.x = value
+            elif key == 'y':
+                self.y = value
+
 
     def to_dictionary(self):
         """Return the dictionary representation of the rectangle"""
