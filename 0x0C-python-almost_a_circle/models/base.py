@@ -47,13 +47,12 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Create instance from dictionary"""
-        if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1)
-        elif cls.__name__ == "Square":
-                dummy = cls(1)
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                dummy = cls(1, 1, 1)
         else:
             dummy.update(**dictionary)
-            return dummy
+        return dummy
 
     @classmethod
     def load_from_file(cls):
