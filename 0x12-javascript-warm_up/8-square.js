@@ -2,7 +2,7 @@
 
 const x = Number(process.argv[2]);
 
-if (process.argv[2] === undefined || isNaN(process.argv[2]) {
+if (process.argv[2] === undefined || isNaN(process.argv[2])) {
   console.log('Missing size');
 } else {
   for (let i = 0; i < x; i++) {
