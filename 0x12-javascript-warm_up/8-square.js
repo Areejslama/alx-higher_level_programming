@@ -9,7 +9,7 @@ if (isNaN(str)) {
 	    let row = '';
         for (let i = 0; i < str; i++) {
             row += 'x';
-        }
         console.log(row);
+	}
     }
 }
