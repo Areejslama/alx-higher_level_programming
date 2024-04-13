@@ -9,8 +9,6 @@ if __name__ == "__main__":
                          passwd=sys.argv[2], db=sys.argv[3], port=3306)
 curs = db.cursor()
 curs.execute("SELECT * FROM states;")
-state = cursor.fetchall()
+state = curs.fetchall()
 for s in state:
     print(s)
-cursor.close()
-db.close()
