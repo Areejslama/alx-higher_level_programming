@@ -12,3 +12,5 @@ cursor.execute("SELECT * FROM states;")
 states = cursor.fetchall()
 for s in states:
     print(s)
+cursor.close()
+db.close()
