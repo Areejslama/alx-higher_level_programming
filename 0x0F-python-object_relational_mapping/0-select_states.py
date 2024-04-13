@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 '''This script lists a database'''
-
 import sys
 import MySQLdb
+
 
 if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", user=sys.argv[1],
