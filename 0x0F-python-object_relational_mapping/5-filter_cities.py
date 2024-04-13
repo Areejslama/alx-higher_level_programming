@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""this script list cities"""
+"""This script lists cities"""
+
 import sys
 import MySQLdb
 
@@ -10,7 +11,7 @@ if __name__ == "__main__":
     city = sys.argv[4]
     cur.execute("""SELECT cities.id, cities.name, states.name FROM
                 cities JOIN states ON states.id=cities.state_id
-                WHERE states.name= %s""", (city,))
-    town = cur.fetchall()
-    for i in town:
+                WHERE states.name LIKE BINARY %s""", (city,))
+    towns = cur.fetchall()
+    for i in towns:
         print(i)
