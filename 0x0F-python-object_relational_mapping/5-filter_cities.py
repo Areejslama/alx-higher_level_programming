@@ -11,8 +11,7 @@ if __name__ == "__main__":
     city = sys.argv[4]
     cur.execute("""SELECT cities.id, cities.name FROM
                 cities JOIN states ON states.id=cities.state_id
-                WHERE states.name LIKE BINARY %(city)s ORDER
-                BY cities.id ASC""", {'city': city})
+                WHERE states.name = %s""", (city,))
     towns = cur.fetchall()
     for i in towns:
         print(i)
