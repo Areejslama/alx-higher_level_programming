@@ -10,3 +10,6 @@ cursor.execute("SELECT * FROM states;")
 states = cursor.fetchall()
 for s in states:
     print(s)
+
+if __name__ == "__main__":
+    main()
