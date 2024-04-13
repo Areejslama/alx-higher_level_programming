@@ -8,10 +8,9 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", user=sys.argv[1],
                          passwd=sys.argv[2], db=sys.argv[3], port=330)
 curs = db.cursor()
-curs.execute(
-        "SELECT * FROM states;")
-states = cursor.fetchall()
-for s in states:
+curs.execute("SELECT * FROM states;")
+state = cursor.fetchall()
+for s in state:
     print(s)
 cursor.close()
 db.close()
