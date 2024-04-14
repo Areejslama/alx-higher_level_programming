@@ -13,7 +13,7 @@ if __name__ == "__main__":
     session = Session()
 
     first_state = session.query(State).first()
-if not first_state:
-    print(0)
+if first_state is None:
+    print("Nothing")
 else:
     print(first_state.id, first_state.name, sep=": ")
