@@ -6,6 +6,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 
 Base = declarative_base()
+
+
 class State(Base):
     """state class to define table"""
     __tablename__ = 'states'
