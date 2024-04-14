@@ -15,4 +15,4 @@ if __name__ == "__main__":
     states = session.query(State).order_by(State.id)
 
     for state in states:
-        print(state.id, state.name, sep= ": ")
+        print(state.id, state.name, sep=": ")
