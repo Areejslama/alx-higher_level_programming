@@ -16,4 +16,4 @@ if __name__ == "__main__":
 if not first_state:
     print(0)
 else:
-        print(first_state.id, first_state.name, sep=": ")
+    print(first_state.id, first_state.name, sep=": ")
