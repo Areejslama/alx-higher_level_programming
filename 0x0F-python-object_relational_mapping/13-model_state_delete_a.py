@@ -13,7 +13,8 @@ if __name__ == "__main__":
     session = Session()
 
     states = session.query(State).filter(State.name.contains('a'))
-    for i in states:
-        session.delete(i)
+    for state in states:
+        session.delete(state)
+        
         session.commit()
-        session.close()
+    session.close()
