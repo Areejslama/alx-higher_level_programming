@@ -9,13 +9,12 @@ if __name__ == "__main__":
                          passwd=sys.argv[2], db=sys.argv[3], port=3306)
     cur = db.cursor()
     state_name = sys.argv[4]
-    cur.execute('''
+    cur.execute("""
         SELECT cities.id, cities.name
         FROM cities
         JOIN states ON cities.state_id = states.id
-        WHERE states.name = %s
-        ORDER BY cities.id ASC
-    ''', (state_name,))
+        WHERE states.name = '{}'""".
+        format(state_name))
     towns = cur.fetchall()
     for i in towns:
         print(i)
