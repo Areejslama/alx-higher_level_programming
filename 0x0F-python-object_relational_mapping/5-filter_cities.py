@@ -15,5 +15,4 @@ if __name__ == "__main__":
         format(state_name))
     full = cur.fetchall()
 
-    for i in full:
-        print(i)
+    print(', '.join(x[0] for x in full))
