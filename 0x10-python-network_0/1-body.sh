@@ -1,3 +1,3 @@
 #!/bin/bash
 # this script to use get method
-curl -s ${1} | GET HTTP/1.1
+curl -s -X GET ${1}
