@@ -1,3 +1,3 @@
 #!/bin/bash
 # this script to use delet method
-curl -s DELETE "$1"
+curl -s -X DELETE "$1"
