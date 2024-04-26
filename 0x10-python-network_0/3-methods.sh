@@ -1,3 +1,3 @@
 #!/bin/bash
 #this script to display methods
-curl -s -l "$1"
+curl -s -X OPTIONS "$1"
