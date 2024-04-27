@@ -9,15 +9,17 @@ if __name__ == "__main__":
     else:
         q = ""
     url = 'http://0.0.0.0:5000/search_user'
-    r = requests.post(url, data={'q': q})
-    res = r.headers['content-type']
-    if r.headers.get('content-type') == 'application/json':
-        data = r.json()
-        q_id = data.get('id')
-        name = data.get('name')
-        if q_id and name:
-            print("[{}] {}".format(q_id, name))
+    response = requests.post(url, data={'q': q})
+    if response.headers.get('content-type') == 'application/json':
+        data = response.json()
+        if data:
+            _id = data.get('id')
+            name = data.get('name')
+            if _id and name:
+                print("[{}] {}".format(_id, name))
+            else:
+                print("No result")
         else:
-            print("NO result")
+            print("No result")
     else:
         print("Not a valid JSON")
