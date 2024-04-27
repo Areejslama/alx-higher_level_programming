@@ -4,14 +4,17 @@ import sys
 import requests
 
 if __name__ == "__main__":
+    if len(sys.argv) >= 2:
+        q = sys.argv[1]
+    else:
+        q = ""
     url = 'http://0.0.0.0:5000/search_user'
-    data = {'q': argv[1] if len(sys.argv) >= 2 else ""}
-    r = requests.post(url, data)
-    res = r.headers['content-type']
+    r = requests.post(url, data={'q': q})
+    res = r.headers.get('content-type')
     if res == 'application/json':
-        result = r.json()
-        q_id = result.get('id')
-        name = result.get('name')
+        data = r.json()
+        q_id = data.get('id')
+        name = data.get('name')
         if q_id and name:
             print("[{}] {}".format(q_id, name))
         else:
