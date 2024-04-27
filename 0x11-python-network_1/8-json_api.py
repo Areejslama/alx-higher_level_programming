@@ -10,7 +10,7 @@ if __name__ == "__main__":
         q = ""
     url = 'http://0.0.0.0:5000/search_user'
     r = requests.post(url, data={'q': q})
-    res = r.headers.get('content-type')
+    res = r.headers['content-type']
     if res == 'application/json':
         data = r.json()
         q_id = data.get('id')
