@@ -5,8 +5,8 @@ import requests
 if __name__ == "__main__":
     url = sys.argv[1]
     try:
-        r =  requests.get(url)
+        r = requests.get(url)
         r.raise_for_status()
-        pass
+        print(r.text)
     except requests.RequestException as e:
         print("Error code:", e)
