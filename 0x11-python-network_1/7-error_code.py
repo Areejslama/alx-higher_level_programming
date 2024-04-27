@@ -7,6 +7,6 @@ if __name__ == "__main__":
     try:
         r = requests.get(url)
         r.raise_for_status()
-        print(r.text)
+        print("Success")
     except requests.RequestException as e:
         print("Error code:", e.status_code)
