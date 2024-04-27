@@ -9,4 +9,4 @@ if __name__ == "__main__":
         r.raise_for_status()
         print(r.text)
     except requests.RequestException as e:
-        print("Error code:", e)
+        print("Error code:", e.status_code)
