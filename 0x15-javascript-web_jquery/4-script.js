@@ -1,1 +1,1 @@
-$('DIV#toggle_header').toggleClass('red green')
+$('div#toggle_header').toggleClass('red green');
